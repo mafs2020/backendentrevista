@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const webpush = require('web-push');
-const morgan = require('morgan');
 const cors = require('cors');
 
 const vapidKeys = {
@@ -37,7 +36,6 @@ const notificationPayload = {
 };
 
 app.use(cors());
-app.use(morgan('dev'));
 app.set('port', process.env.PORT || 3000);
 app.use(express.json());
 app.use(express.urlencoded({extended:false, limit: 10000000}));
